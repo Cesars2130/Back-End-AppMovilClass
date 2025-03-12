@@ -17,30 +17,25 @@ userRouter.post(
 
 userRouter.get(
     "/",
-    verifyToken,
     getUsersController.run.bind(getUsersController)
 )
 
 userRouter.get(
     "/email/:email",
-    verifyToken,
     getUserByEmailController.run.bind(getUserByEmailController)
 )
 
 userRouter.get(
     "/:id_user",
-    verifyToken,
     getUserByIdController.run.bind(getUserByIdController)
 )
 
 userRouter.put(
     "/",
-    verifyToken,
     updateUserTokenByidController.run.bind(updateUserTokenByidController)
 )
 
 userRouter.delete(
     "/:id_user",
-    verifyToken,
     deleteUserTokenController.run.bind(deleteUserTokenController)
 )
