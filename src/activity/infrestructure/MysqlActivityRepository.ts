@@ -29,7 +29,7 @@ export class MysqlActivityRepository implements ActivityRepository {
       const [result]: any = await query(sql, params);
 
       return result.map(
-        (row: any) => new Activity(row.id_activity, row.id_class, row.activity_name, row.activity_description)
+        (row: any) => new Activity(row.id_activity,row.activity_name, row.activity_description,row.id_class)
       );
     } catch (error) {
       console.error("Error en getActivitiesByClass:", error);

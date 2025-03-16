@@ -25,6 +25,7 @@ export class ActivityController {
     try {
       const { id_class } = req.params;
       const activities = await this.getActivitiesByClassUseCase.execute(Number(id_class));
+      console.log(activities)
       return res.status(200).json(activities);
     } catch (error) {
       return res.status(500).json({ message: "Error al obtener actividades" });

@@ -7,12 +7,10 @@ export const classRouter = express.Router();
 
 classRouter.post(
     "/",
-    verifyToken,
     createClassController.run.bind(createClassController)
 )
 
 classRouter.get(
     "/:id_class",
-    verifyToken,
     getClassByIdController.run.bind(getClassByIdController)
 )
