@@ -1,4 +1,5 @@
 import { EnrollmentRepository } from "../domain/enrollmentRepository/EnrollmentRepository";
+import { messaging1 } from "../../fcm/fcm.config";
 
 export class JoinClassUseCase {
   constructor(private readonly enrollmentRepository: EnrollmentRepository) {}
@@ -7,6 +8,7 @@ export class JoinClassUseCase {
     let boolean = false
     console.log(id_user,class_code)
     const res = await this.enrollmentRepository.joinClass(id_user, class_code);
+    
     if (res) {
       boolean = true
     }
